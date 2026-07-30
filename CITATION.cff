@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this reference, please cite it as below."
+title: "Machine Learning Reference: equations and loss functions for common models"
+abstract: >-
+  A compact reference of the core equations and loss functions behind common
+  machine learning models, spanning supervised and unsupervised learning, deep
+  learning and reinforcement learning, together with a practical guide to
+  building applications with LangChain.
+authors:
+  - family-names: Tadjaoui
+    given-names: Saad
+version: 1.0.0
+date-released: 2026-07-30
+license: MIT
+repository-code: "https://github.com/SaadTadja/machine-learning-reference"
+keywords:
+  - machine learning
+  - deep learning
+  - reinforcement learning
+  - reference
+  - langchain
