@@ -110,13 +110,17 @@ $$\nabla J(\theta) = \mathbb{E}_{\pi_\theta} \left[ \nabla_\theta \log \pi_\thet
 
 ## Also in this repository
 
-**[Unlocking the Power of Generative AI with LangChain](generative-ai-langchain.pdf)** — 4 pages, August 2025
+**[Unlocking the Power of Generative AI with LangChain](langchain-guide.md)** — August 2025
 
 A practical guide to working around the limits of raw language models: hallucination,
-static knowledge, no real-time data access, and weak context retention. Covers
-retrieval-augmented generation, fact-checking, summarization strategies, memory
-integration, deployment and monitoring, and ethical considerations including bias
-mitigation and regulatory compliance.
+static knowledge, no real-time data access, and weak context retention. Covers chains,
+agents, memory and vector stores; fact-checking with `LLMCheckerChain`; three summarization
+strategies including Chain of Density and Map-Reduce; LoRA fine-tuning and prompt
+engineering; deployment with FastAPI, Ray and LangSmith; and ethical considerations
+including bias mitigation and regulatory compliance.
+
+Read it [in markdown](langchain-guide.md), or as [PDF](generative-ai-langchain.pdf) ·
+[LaTeX source](generative-ai-langchain.tex)
 
 ---
 
