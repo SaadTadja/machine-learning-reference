@@ -1,0 +1,120 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Machine Learning Models},
+}
+
+\title{\textbf{Machine Learning Models}}
+\author{Saad Tadjaoui}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{I-Supervised Learning Models}
+
+\subsection*{Linear Regression}
+\begin{align*}
+\hat{y} &= w^T x + b \\
+\mathcal{L}(w, b) &= \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+\end{align*}
+
+\subsection*{Logistic Regression}
+\begin{align*}
+\hat{y} &= \frac{1}{1 + e^{-w^T x - b}} \\
+\mathcal{L}(w, b) &= - \frac{1}{n} \sum_{i=1}^n \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
+\end{align*}
+
+\subsection*{Ridge Regression (L2)}
+\begin{align*}
+\mathcal{L}(w, b) &= \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2 + \lambda \|w\|^2
+\end{align*}
+
+\subsection*{Lasso Regression (L1)}
+\begin{align*}
+\mathcal{L}(w, b) &= \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2 + \lambda \|w\|_1
+\end{align*}
+
+\subsection*{Support Vector Machine (SVM)}
+\begin{align*}
+\hat{y} &= \text{sign}(w^T x + b) \\
+\mathcal{L}(w) &= \frac{1}{n} \sum_{i=1}^n \max(0, 1 - y_i(w^T x_i + b)) + \lambda \|w\|^2
+\end{align*}
+
+\subsection*{Decision Tree}
+\begin{align*}
+\text{Gini} &= 1 - \sum_{k} p_k^2 \\
+\text{Entropy} &= -\sum_{k} p_k \log(p_k)
+\end{align*}
+
+\subsection*{Random Forest}
+\begin{align*}
+\hat{y} &= \frac{1}{T} \sum_{t=1}^{T} \hat{y}^{(t)}
+\end{align*}
+
+\subsection*{Gradient Boosting}
+\begin{align*}
+\hat{y}_i^{(t)} &= \hat{y}_i^{(t-1)} + \eta f_t(x_i) \\
+\mathcal{L}^{(t)} &= \sum_{i=1}^n l(y_i, \hat{y}_i^{(t)}) + \sum_{t=1}^T \Omega(f_t)
+\end{align*}
+
+\section*{II-Unsupervised Learning Models}
+
+\subsection*{K-Means Clustering}
+\begin{align*}
+\min_{C} \sum_{k=1}^{K} \sum_{x_i \in C_k} \|x_i - \mu_k\|^2
+\end{align*}
+
+\subsection*{Principal Component Analysis (PCA)}
+\begin{align*}
+\text{maximize} \quad \text{Var}(Xw) \quad \text{s.t.} \quad \|w\| = 1
+\end{align*}
+
+\subsection*{Gaussian Mixture Models (GMM)}
+\begin{align*}
+P(x) = \sum_{k=1}^{K} \pi_k \mathcal{N}(x | \mu_k, \Sigma_k)
+\end{align*}
+
+\section*{III-Deep Learning Models}
+
+\subsection*{Neural Networks (ANN)}
+\begin{align*}
+a^{(l)} &= f(W^{(l)} a^{(l-1)} + b^{(l)})
+\end{align*}
+
+\subsection*{Convolutional Neural Network (CNN)}
+\begin{align*}
+S(i, j) &= (X * K)(i, j) = \sum_m \sum_n X(i+m, j+n) \cdot K(m,n)
+\end{align*}
+
+\subsection*{Recurrent Neural Network (RNN)}
+\begin{align*}
+h_t = f(W x_t + U h_{t-1} + b)
+\end{align*}
+
+\subsection*{Transformer - Self Attention}
+\begin{align*}
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+\end{align*}
+
+\section*{IV-Reinforcement Learning}
+
+\subsection*{Q-Learning}
+\begin{align*}
+Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
+\end{align*}
+
+\subsection*{Policy Gradient}
+\begin{align*}
+\nabla J(\theta) = \mathbb{E}_{\pi_\theta} \left[ \nabla_\theta \log \pi_\theta(a|s) R \right]
+\end{align*}
+
+\end{document}
